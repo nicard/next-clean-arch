@@ -1,0 +1,15 @@
+# serverless.yml
+ 
+nextPokemonServerlessApplication:
+  component: "./node_modules/@sls-next/serverless-component" 
+  inputs:
+    domain: ["pokemon", "richardramalho.com.br"] 
+    domainMinimumProtocolVersion: "TLSv1.2_2018" 
+    publicDirectoryCache:
+      value: public, max-age=604800
+      test: /\.(gif|jpe?g|png|txt|xml)$/i
+    # this is the cache behaviour for next.js api pages
+    api:
+      minTTL: 10
+      maxTTL: 10
+      defaultTTL: 10
